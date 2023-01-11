@@ -26,7 +26,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://imgur.com/coEhszo" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/coEhszo.png" height="80%" width="80%" alt="VNET"/>
 </p>
 <p>
 In the first step of this tutorial we will need to start off by creating two Virtual Machines using Microsoft Azure. One of the VMs will need to be Windows 10 and the other machine will need to be Linux (Ubuntu), both will need to be connected to the same VNET. After completing this step, go over to your Windows 10 machine using remotre desktop by entering your VMs Public IP Address and install Wireshark with the following link : https://www.wireshark.org/download.html After installing Wireshark, open and filter for ICMP traffic only. ICMP uses the ping protocol, we can use this protocol to ping our Linux (Ubuntu) Private IP Address in our Command Prompt and observe the ping requests and replies in our Wireshark.
