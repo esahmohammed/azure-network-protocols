@@ -30,7 +30,7 @@ In the first step of this tutorial we will need to start off by creating two Vir
 </p>
 <br />
 <p>
-<img src="https://i.imgur.com/coEhszo.png" height="80%" width="80%" alt="VNET"/>
+<img src="https://i.imgur.com/coEhszo.png" height="40%" width="40%" alt="VNET"/>
 </p>
 
 <p>
@@ -42,7 +42,7 @@ After completing this step, go over to your Windows 10 machine using remote desk
 </p>
 
 <p>
-<img src="https://i.imgur.com/it44TK6.png" height="80%" width="80%" alt="Ping ICMP"/>
+<img src="https://i.imgur.com/it44TK6.png" height="40%" width="40%" alt="Ping ICMP"/>
 </p>
 <p>
 Now we can initiate a perpetual ping which is a non-stop ping from our Windows 10 VM to our Linux (Ubuntu) Machine using the -t command in our command prompt. This will ping the Linux machine until we decide to stop pinging. As the machine perpetually pings, open the Network Security Group of your Linux (Ubuntu) Virtual Machine on Microsoft Azure and disable incoming (inbound) ICMP traffic. We can do so by creating a new Network Security Group and adding an inbound security rule. If we go back to our Windows 10 VM now, we can observe that all ICMP traffic in our command prompt and Wireshark are timed out as we disabled it. Allowing incoming (inbound) ICMP traffic will reenable the ping.
@@ -50,14 +50,13 @@ Now we can initiate a perpetual ping which is a non-stop ping from our Windows 1
 <br />
 
 <p>
-<img src="https://i.imgur.com/s8jor9C.png" height="80%" width="80%" alt="Perpetual Ping"/>
+<img src="https://i.imgur.com/s8jor9C.png" height="40%" width="40%" alt="Perpetual Ping"/>
 </p>
 <p>
-<img src="https://i.imgur.com/Lp8bf2z.png" height="80%" width="80%" alt="ICMP DENIED"/>
+<img src="https://i.imgur.com/Lp8bf2z.png" height="40%" width="40%" alt="ICMP DENIED"/>
 </p>
 <p>
-<img src="https://i.imgur.com/DgDF7jh.png" height="80%" width="80%" alt="ICMP ALLOWED"/>
-</p>
+
 <p>
 In our next step we will SSH into our Linux machine through our Windows 10 VM using the command prompt. SSH is similar to RDP (Remote Desktop Protocol) but instead has no GUI. We use SSH to gain access to another machines command line. First we filter for ssh traffic in Wireshark so we can observe the feedback we get, then we shh into our Linux (Ubuntu) VM using the command "ssh labuser@10.0.0.5" in our command prompt. After we have successfully logged in, we can see that Wireshark immediately shows feedback on whatever we type in the command prompt.
 </p>
