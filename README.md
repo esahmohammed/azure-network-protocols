@@ -33,22 +33,33 @@ After completing this step, go over to your Windows 10 machine using remote desk
 </p>
 <br />
 <p>
-<img src="https://i.imgur.com/uo4bV6Z.png" height="80%" width="80%" alt="Filter ICMP"/>
+<img src="https://i.imgur.com/2rUiiWJ.png" height="80%" width="80%" alt="Filter ICMP"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/it44TK6.png" height="80%" width="80%" alt="Ping ICMP"/>
+<img src="https://i.imgur.com/B3nfkyZ.png" height="80%" width="80%" alt="Ping ICMP"/>
 </p>
 <p>
-Now we can initiate a perpetual ping which is a non-stop ping from our Windows 10 VM to our Linux (Ubuntu) Machine using the -t command in our command prompt. This will ping the Linux machine until we decide to stop pinging. As the machine perpetually pings, open the Network Security Group of your Linux (Ubuntu) Virtual Machine on Microsoft Azure and disable incoming (inbound) ICMP traffic. We can do so by creating a new Network Security Group and adding an inbound security rule. If we go back to our Windows 10 VM now, we can observe that all ICMP traffic in our command prompt and Wireshark are timed out as we disabled it. Allowing incoming (inbound) ICMP traffic will reenable the ping.
+Now we can initiate a perpetual ping which is a non-stop ping from our Windows 10 VM to our Linux (Ubuntu) Machine using the -t command in our command prompt. This will ping the Linux machine until we decide to stop pinging.
+</p>
+
+<p>
+<img src="https://i.imgur.com/kyNDZVu.png" height="80%" width="80%" alt="Perpetual Ping"/>
+</p>
+
+<p>
+As the machine perpetually pings, open the Network Security Group of your Linux (Ubuntu) Virtual Machine on Microsoft Azure and disable incoming (inbound) ICMP traffic. We can do so by creating a new Network Security Group and adding an inbound security rule. If we go back to our Windows 10 VM now, we can observe that all ICMP traffic in our command prompt and Wireshark are timed out as we disabled it. Allowing incoming (inbound) ICMP traffic will reenable the ping.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/s8jor9C.png" height="40%" width="40%" alt="Perpetual Ping"/>
+<img src="https://i.imgur.com/mlLAm58.png" height="80%" width="80%" alt="ICMP Denied"/>
 </p>
 <p>
-<img src="https://i.imgur.com/Lp8bf2z.png" height="40%" width="40%" alt="ICMP DENIED"/>
+<img src="https://i.imgur.com/dKglW0f.png" height="80%" width="80%" alt="ICMP Denied"/>
+</p>
+<p>
+<img src="https://i.imgur.com/0EGwm0G.png" height="80%" width="80%" alt="Request time out"/>
 </p>
 <p>
 
@@ -58,7 +69,7 @@ In our next step we will SSH into our Linux machine through our Windows 10 VM us
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/aIWGIsR.png" height="80%" width="80%" alt="SSH into VM-2"/>
 </p>
 <p>
 Going back to Wireshark, we will filter for only DHCP traffic. DHCP is used to assign ip addresses to computers, so we will use DHCP to give our Windows 10 VM a new IP Address. Using our command prompt on our Windows 10 VM, we will use the command "ipconfig /renew" and observe that Wireshark will start showing DHCP traffic.
@@ -66,7 +77,7 @@ Going back to Wireshark, we will filter for only DHCP traffic. DHCP is used to a
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/pihO39n.png" height="80%" width="80%" alt="DHCP"/>
 </p>
 <p>
 Next we will filter for only DNS traffic in Wireshark. We can start seeing results in our Wireshark by opening our command prompt and using the command "nslookup www.google.com" or any link of your choice. This command will ask our DNS what is links IP address or for example google's IP address, as DNS takes human readable names and converts them into IP addresses that the computer can use.  
@@ -74,9 +85,14 @@ Next we will filter for only DNS traffic in Wireshark. We can start seeing resul
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/sRpDvxP.png" height="80%" width="80%" alt="DNS"/>
 </p>
+
 <p>
 For the final step we will filter for RDP traffic only. We can filter for RDP traffic in wireshark by entering tcp.port == 3389. After filtering, we can see that the traffic does not stop in Wireshark as we are using the Remote Desktop Protcol (RDP) to access our virtual machine. 
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/f3MMay6.png" height="80%" width="80%" alt="RDP"/>
+</p>
