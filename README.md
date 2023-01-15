@@ -25,7 +25,7 @@ In the first step of this tutorial we will need to start off by creating two Vir
 </p>
 <br />
 <p>
-<img src="https://i.imgur.com/coEhszo.png" height="60%" width="60%" alt="VNET"/>
+<img src="https://i.imgur.com/coEhszo.png" height="80%" width="80%" alt="VNET"/>
 </p>
 
 <p>
@@ -33,11 +33,11 @@ After completing this step, go over to your Windows 10 machine using remote desk
 </p>
 <br />
 <p>
-<img src="https://i.imgur.com/uo4bV6Z.png" height="60%" width="60%" alt="Filter ICMP"/>
+<img src="https://i.imgur.com/uo4bV6Z.png" height="80%" width="80%" alt="Filter ICMP"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/it44TK6.png" height="60%" width="60%" alt="Ping ICMP"/>
+<img src="https://i.imgur.com/it44TK6.png" height="80%" width="80%" alt="Ping ICMP"/>
 </p>
 <p>
 Now we can initiate a perpetual ping which is a non-stop ping from our Windows 10 VM to our Linux (Ubuntu) Machine using the -t command in our command prompt. This will ping the Linux machine until we decide to stop pinging. As the machine perpetually pings, open the Network Security Group of your Linux (Ubuntu) Virtual Machine on Microsoft Azure and disable incoming (inbound) ICMP traffic. We can do so by creating a new Network Security Group and adding an inbound security rule. If we go back to our Windows 10 VM now, we can observe that all ICMP traffic in our command prompt and Wireshark are timed out as we disabled it. Allowing incoming (inbound) ICMP traffic will reenable the ping.
