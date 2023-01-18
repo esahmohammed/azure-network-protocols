@@ -64,7 +64,7 @@ As the machine perpetually pings, open the Network Security Group of your Linux 
 <p>
 
 <p>
-In our next step we will SSH into our Linux machine through our Windows 10 VM using the command prompt. SSH is similar to RDP (Remote Desktop Protocol) but instead has no GUI. We use SSH to gain access to another machines command line. First we filter for ssh traffic in Wireshark so we can observe the feedback we get, then we shh into our Linux (Ubuntu) VM using the command "ssh labuser@10.0.0.5" in our command prompt. After we have successfully logged in, we can see that Wireshark immediately shows feedback on whatever we type in the command prompt.
+In our next step we will SSH into our Linux machine through our Windows 10 VM using the command prompt. SSH is similar to RDP (Remote Desktop Protocol) but instead has no GUI. We use SSH to gain access to another machines command line. First we filter for ssh traffic in Wireshark so we can observe the feedback we get, then we ssh into our Linux (Ubuntu) VM using the command "ssh labuser@10.0.0.5" in our command prompt. After we have successfully logged in, we can see that Wireshark immediately shows feedback on whatever we type in the command prompt.
 </p>
 <br />
 
